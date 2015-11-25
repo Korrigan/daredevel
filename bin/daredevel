@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'daredevel'
+
+Daredevel::CLI.execute(*ARGV)
