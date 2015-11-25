@@ -1,8 +1,12 @@
 class Daredevel::Environment
-  attr_accessor :name, :loopback
+  attr_accessor :name, :directory
 
-  def initialize name
+  def initialize name, directory
     self.name = name
-    self.loopback = '127.0.0.1'
   end
+
+  def loopback
+    @loopback ||= '127.0.0.1'
+  end
+
 end

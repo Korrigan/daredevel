@@ -1,12 +1,16 @@
 module Daredevel::CLI
-  COMMANDS = ['server']
+  COMMANDS = ['server', 'start']
+
+  def self.start
+    Daredevel::Client.new.start
+  end
 
   def self.server ip = "0.0.0.0", port = "5300"
-    Daredevel::Server.run
+    Daredevel::Server.new.run
   end
 
   def self.usage
-    p "Usage: daredevel command [ip] [port]"
+    puts "Usage: daredevel command [args...]"
   end
 
   def self.execute command = nil, *args
